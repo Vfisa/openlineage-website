@@ -1,0 +1,33 @@
+---
+title: keboola
+description: Keboola is a modern data platform as a service allowing you to integrate multiple data-sources, perform analytics and ML, and automate data pipelines. The platform is able to automatically push all job information to the OpenLineage endpoint.
+image: ./stack.png
+banner: ./banner.svg
+version: All versions
+datasources: 300+ components: https://components.keboola.com/
+---
+
+```toc
+```
+
+## What is Keboola?
+
+Keboola is a modern data platform as a service allowing you to integrate multiple data-sources, perform analytics and ML, design and run transformations in variety of backends (SQL, Python, R, Julia, etc.) and automate data pipelines. The advantage of all-in-one stack is that it automatically collect information about every job, activity and also user generated metadata, all as a default out of the box behaviour. The platform is able to automatically push all job information to the OpenLineage endpoint.
+
+To learn more about Keboola platform, visit the [official site](https://keboola.com) or directly go for a test drive of our free tier [TRY KEBOOLA](https://connection.north-europe.azure.keboola.com/wizard).
+
+## How does Keboola platform work with OpenLineage?
+
+Keboola platform automatically collects all job run information and other metadata. OpenLineage component is designed to grab such metadata from our metastore and just push it in the correct openlineage format to any openlineage endpoint, for instance your Marquez setup.
+
+This integration is implemented as a standard Keboola component - user just needs to configure component and set up a scheduling for regular metadata push. This schedule can be part of each flow, can be set up independently on regular basis (such as every 15 mins, every hour, 2x a day, etc.). 
+
+Data pushed to the endpoint contain everything needed to trace lineage. At the moment Keboola team explores the ways to expand the metadata stored with more storage table information.
+
+## Using OpenLineage in multi-project architecture
+
+Component pushes jobs associated to a single project - identifying it as a `namespace` within the openlineage destination (for instance, Marquez). In the case of multi-project architecture 
+
+## Feedback
+
+You can reach out to us on [support](https://keboola.atlassian.net/servicedesk/customer/portal/3/group/4/create/41) and leave us feedback!  
