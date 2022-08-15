@@ -4,6 +4,8 @@ description: Keboola is a modern data platform as a service allowing you to inte
 banner: ./banner.svg
 version: All versions
 datasources: 300+ components https://components.keboola.com/
+github: https://github.com/keboola/wr-openlineage
+openlineage job API: https://app.swaggerhub.com/apis-docs/keboola/job-queue-api/
 ---
 
 ```toc
@@ -22,6 +24,13 @@ Keboola platform automatically collects all job run information and other metada
 This integration is implemented as a standard Keboola component - user just needs to configure component and set up a scheduling for regular metadata push. This schedule can be part of each flow, can be set up independently on regular basis (such as every 15 mins, every hour, 2x a day, etc.). 
 
 Data pushed to the endpoint contain everything needed to trace lineage. At the moment Keboola team explores the ways to expand the metadata stored with more storage table information.
+
+## Implementation detail
+
+Keboola supports both push and pull methods of openlineage integration:
+ - Pull-like API endpoint for jobs: https://app.swaggerhub.com/apis-docs/keboola/job-queue-api/
+ - Push-like Keboola component (writer), able to push jobs in batch: https://components.keboola.com/components/keboola.wr-openlineage
+
 
 ## Using OpenLineage in multi-project architecture
 
